@@ -22,11 +22,9 @@ class Invoice {
     StringBuffer result = new StringBuffer();
     result.append("<P>Bill for <I>" + customer + "</I></P>");
     result.append("<table>");
-    Iterator it = items.iterator();
-    while(it.hasNext()) {
-      LineItem each = (LineItem) it.next();
-      result.append("<tr><td>" + each.getProduct()
-          + "</td><td>" + each.getAmount() + "</td></tr>");
+    items.each { lineItem ->
+      result.append("<tr><td>" + lineItem.getProduct()
+          + "</td><td>" + lineItem.getAmount() + "</td></tr>");
     }
     result.append("</table>");
     result.append("<P> total owed:<B>" + total + "</B></P>");
