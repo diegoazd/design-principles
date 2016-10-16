@@ -2,6 +2,7 @@ package com.design.principles.dry
 
 import com.desing.principles.dry.printer.AsciiBillPrinter
 import com.desing.principles.dry.printer.BillPrinter
+import com.desing.principles.dry.printer.HtmlBillPrinter
 
 class Invoice {
 
@@ -11,6 +12,10 @@ class Invoice {
 
   String asciiStatement() {
       statement(new AsciiBillPrinter())
+  }
+    
+  String htmlStatement() {
+    statement(new HtmlBillPrinter())
   }
 
   private String statement(BillPrinter billPrinter) {
@@ -24,16 +29,4 @@ class Invoice {
   }
 
 
-    String htmlStatement() {
-    StringBuffer result = new StringBuffer();
-    result.append("<P>Bill for <I>" + customer + "</I></P>")
-    result.append("<table>")
-    items.each { lineItem ->
-      result.append("<tr><td>" + lineItem.getProduct()
-          + "</td><td>" + lineItem.getAmount() + "</td></tr>")
-    }
-    result.append("</table>");
-    result.append("<P> total owed:<B>" + total + "</B></P>")
-    result.toString()
-  }
 }
