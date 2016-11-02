@@ -17,18 +17,18 @@ class DependencyInversionSpec extends Specification {
     true          | false
   }
 
-   void "Should do action on blender when #physicalState"() {
-      setup:
-      Blender blender = new Blender(physicalState: physicalState)
-      when:
-      new Button().pushSwitch(blender)
-      then:
-      blender.physicalState == expectedState
-      blender.speed == speedExpected
-      where:
-      physicalState | expectedState | speedExpected
-      false         | true          | 1
-      true          | false         | 0
-   }
+ void "Should do action on blender when #physicalState"() {
+    setup:
+    Blender blender = new Blender(physicalState: physicalState)
+    when:
+    new Button().pushSwitch(blender)
+    then:
+    blender.physicalState == expectedState
+    blender.speed == speedExpected
+    where:
+    physicalState | expectedState | speedExpected
+    false         | true          | 1
+    true          | false         | 0
+ }
 
 }

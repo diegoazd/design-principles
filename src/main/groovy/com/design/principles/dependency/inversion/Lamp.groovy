@@ -1,6 +1,6 @@
 package com.design.principles.dependency.inversion
 
-class Lamp {
+class Lamp implements Device {
   boolean physicalState
 
   void turnOn() {
@@ -9,5 +9,10 @@ class Lamp {
 
   void turnOff() {
     physicalState = false
+  }
+
+  @Override
+  boolean getState() {
+    physicalState
   }
 }

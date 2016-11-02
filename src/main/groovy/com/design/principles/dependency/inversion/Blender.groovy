@@ -1,8 +1,8 @@
 package com.design.principles.dependency.inversion
 
-class Blender {
-  boolean physicalState
+class Blender implements Device {
   int speed
+  boolean physicalState
 
   void turnOn() {
     physicalState = true
@@ -14,5 +14,10 @@ class Blender {
     physicalState = false
     speed = 0
     println 'Do stuff on turn off'
+  }
+
+  @Override
+  boolean getState() {
+    physicalState
   }
 }
