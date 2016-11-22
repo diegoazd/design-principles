@@ -9,7 +9,6 @@ class Invoice {
   String asciiStatement() {
     StringBuffer result = new StringBuffer();
     result.append("Bill for " + customer + "\n");
-    Iterator it = items.iterator();
     items.each { lineItem ->
       result.append("\t" + lineItem.getProduct() + "\t\t"
           + lineItem.getAmount() + "\n");
