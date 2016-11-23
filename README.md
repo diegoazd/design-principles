@@ -1,24 +1,5 @@
-Groovy Application project template
+DESGIN PRINCIPLES
 ------------------------------------
 
-You have just created a basic Groovy application. There is a standard project
-structure for source code and tests.
+To run the tests ./gradlew test
 
-In this project you get:
-
-* A Gradle build file
-* A standard project structure:
-
-    <proj>
-      |
-      +- src
-          |
-          +- main
-          |     |
-          |     +- groovy
-          |
-          +- test
-          |   |
-          |   +- groovy
-
-          |
