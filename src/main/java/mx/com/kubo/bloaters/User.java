@@ -1,4 +1,4 @@
-package mx.com.kubo.bloaters.primitive.obsession;
+package mx.com.kubo.bloaters;
 
 public class User {
     private String user;

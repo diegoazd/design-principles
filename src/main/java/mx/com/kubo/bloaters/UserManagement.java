@@ -1,4 +1,4 @@
-package mx.com.kubo.bloaters.primitive.obsession;
+package mx.com.kubo.bloaters;
 
 import java.util.HashMap;
 import java.util.Map;
