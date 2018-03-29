@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5967d67-f72e-4cf4-860b-26cf2136bdba" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/mx/com/kubo/bloaters/primitive/obsession/Login.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/mx/com/kubo/bloaters/primitive/obsession/User.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/mx/com/kubo/bloaters/primitive/obsession/LoginTest.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/classes/mx/com/kubo/bloaters/primitive/obsession/Login.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/classes/mx/com/kubo/bloaters/primitive/obsession/LoginTest.class" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/mx/com/kubo/bloaters/primitive/obsession/Login.java" afterPath="$PROJECT_DIR$/src/main/java/mx/com/kubo/bloaters/primitive/obsession/UserManagement.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/mx/com/kubo/bloaters/primitive/obsession/LoginTest.java" afterPath="$PROJECT_DIR$/src/test/java/mx/com/kubo/bloaters/primitive/obsession/UserManagementTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code-smells.iml" afterPath="$PROJECT_DIR$/code-smells.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -34,12 +27,14 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file leaf-file-name="Login.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/java/mx/com/kubo/bloaters/primitive/obsession/Login.java">
+          <file leaf-file-name="UserManagement.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/java/mx/com/kubo/bloaters/primitive/obsession/UserManagement.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="414">
-                  <caret line="23" column="53" lean-forward="false" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
-                  <folding />
+                <state relative-caret-position="252">
+                  <caret line="40" column="27" lean-forward="false" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -65,17 +60,19 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="LoginTest.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/test/java/mx/com/kubo/bloaters/primitive/obsession/LoginTest.java">
+          <file leaf-file-name="UserManagementTest.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/test/java/mx/com/kubo/bloaters/primitive/obsession/UserManagementTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="446">
-                  <caret line="59" column="44" lean-forward="false" selection-start-line="59" selection-start-column="44" selection-end-line="59" selection-end-column="44" />
+                <state relative-caret-position="245">
+                  <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#272#273#0" expanded="true" />
-                    <element signature="e#307#308#0" expanded="true" />
-                    <element signature="e#1730#1731#0" expanded="true" />
-                    <element signature="e#1782#1783#0" expanded="true" />
+                    <element signature="e#299#300#0" expanded="true" />
+                    <element signature="e#352#353#0" expanded="true" />
+                    <element signature="e#1880#1881#0" expanded="true" />
+                    <element signature="e#1941#1942#0" expanded="true" />
+                    <element signature="e#2347#2348#0" expanded="true" />
+                    <element signature="e#2413#2414#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -661,6 +658,8 @@
         <option value="$PROJECT_DIR$/src/main/java/mx/com/kubo/bloaters/primitive/obsession/User.java" />
         <option value="$PROJECT_DIR$/src/test/java/mx/com/kubo/bloaters/primitive/obsession/LoginTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/mx/com/kubo/bloaters/primitive/obsession/Login.java" />
+        <option value="$PROJECT_DIR$/src/test/java/mx/com/kubo/bloaters/primitive/obsession/UserManagementTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mx/com/kubo/bloaters/primitive/obsession/UserManagement.java" />
       </list>
     </option>
   </component>
@@ -749,8 +748,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.LoginTest">
-    <configuration name="LoginTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.UserManagementTest">
+    <configuration name="UserManagementTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="mx.com.kubo.bloaters.primitive.obsession.*" />
@@ -761,7 +760,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="mx.com.kubo.bloaters.primitive.obsession" />
-      <option name="MAIN_CLASS_NAME" value="mx.com.kubo.bloaters.primitive.obsession.LoginTest" />
+      <option name="MAIN_CLASS_NAME" value="mx.com.kubo.bloaters.primitive.obsession.UserManagementTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -857,7 +856,7 @@
     </configuration>
     <recent_temporary>
       <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.LoginTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.UserManagementTest" />
       </list>
     </recent_temporary>
   </component>
@@ -881,35 +880,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="LoginTest - 2018.03.29 at 08h 04m 49s.xml">
-      <configuration name="LoginTest" configurationId="JUnit" />
+    <history-entry file="UserManagementTest - 2018.03.29 at 08h 25m 15s.xml">
+      <configuration name="UserManagementTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LoginTest - 2018.03.29 at 08h 06m 07s.xml">
-      <configuration name="LoginTest" configurationId="JUnit" />
+    <history-entry file="UserManagementTest - 2018.03.29 at 08h 25m 43s.xml">
+      <configuration name="UserManagementTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LoginTest - 2018.03.29 at 08h 09m 37s.xml">
-      <configuration name="LoginTest" configurationId="JUnit" />
+    <history-entry file="UserManagementTest - 2018.03.29 at 08h 29m 36s.xml">
+      <configuration name="UserManagementTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LoginTest - 2018.03.29 at 08h 10m 27s.xml">
-      <configuration name="LoginTest" configurationId="JUnit" />
+    <history-entry file="UserManagementTest - 2018.03.29 at 08h 29m 56s.xml">
+      <configuration name="UserManagementTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LoginTest - 2018.03.29 at 08h 11m 45s.xml">
-      <configuration name="LoginTest" configurationId="JUnit" />
+    <history-entry file="UserManagementTest - 2018.03.29 at 08h 38m 23s.xml">
+      <configuration name="UserManagementTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LoginTest - 2018.03.29 at 08h 13m 26s.xml">
-      <configuration name="LoginTest" configurationId="JUnit" />
+    <history-entry file="UserManagementTest - 2018.03.29 at 08h 40m 13s.xml">
+      <configuration name="UserManagementTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LoginTest - 2018.03.29 at 08h 15m 38s.xml">
-      <configuration name="LoginTest" configurationId="JUnit" />
+    <history-entry file="UserManagementTest - 2018.03.29 at 08h 44m 02s.xml">
+      <configuration name="UserManagementTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LoginTest - 2018.03.29 at 08h 16m 37s.xml">
-      <configuration name="LoginTest" configurationId="JUnit" />
+    <history-entry file="UserManagementTest - 2018.03.29 at 08h 49m 27s.xml">
+      <configuration name="UserManagementTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LoginTest - 2018.03.29 at 08h 17m 51s.xml">
-      <configuration name="LoginTest" configurationId="JUnit" />
+    <history-entry file="UserManagementTest - 2018.03.29 at 08h 50m 48s.xml">
+      <configuration name="UserManagementTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LoginTest - 2018.03.29 at 08h 18m 39s.xml">
-      <configuration name="LoginTest" configurationId="JUnit" />
+    <history-entry file="UserManagementTest - 2018.03.29 at 08h 51m 40s.xml">
+      <configuration name="UserManagementTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -970,25 +969,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/mx/com/kubo/bloaters/primitive/obsession/LoginTest.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="59" column="44" lean-forward="false" selection-start-line="59" selection-start-column="44" selection-end-line="59" selection-end-column="44" />
+        <state relative-caret-position="183">
+          <caret line="83" column="31" lean-forward="false" selection-start-line="83" selection-start-column="31" selection-end-line="83" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/mx/com/kubo/bloaters/primitive/obsession/UserManagementTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#272#273#0" expanded="true" />
-            <element signature="e#307#308#0" expanded="true" />
-            <element signature="e#1730#1731#0" expanded="true" />
-            <element signature="e#1782#1783#0" expanded="true" />
+            <element signature="e#299#300#0" expanded="true" />
+            <element signature="e#352#353#0" expanded="true" />
+            <element signature="e#1880#1881#0" expanded="true" />
+            <element signature="e#1941#1942#0" expanded="true" />
+            <element signature="e#2347#2348#0" expanded="true" />
+            <element signature="e#2413#2414#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mx/com/kubo/bloaters/primitive/obsession/Login.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/mx/com/kubo/bloaters/primitive/obsession/UserManagement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="53" lean-forward="false" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
-          <folding />
+        <state relative-caret-position="252">
+          <caret line="40" column="27" lean-forward="false" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
