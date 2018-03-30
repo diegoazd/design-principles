@@ -1,4 +1,6 @@
-package mx.com.kubo.preventers;
+package mx.com.kubo.preventers.impl;
+
+import mx.com.kubo.preventers.InvoicePrinter;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -72,6 +74,10 @@ public class Invoice implements InvoicePrinter {
                 .append("</total></bill>");
 
         return sb.toString();
+    }
+
+    public List<Item> getLineItem() {
+        return lineItem;
     }
 
 
