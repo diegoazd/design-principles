@@ -26,15 +26,15 @@ public class UserManagement {
     public User login(String user, String password) {
         User loggedUser = users.get(user);
 
-        if(loggedUser != null && verifyUser(user, password, loggedUser)) {
+        if(loggedUser != null && verifyUser(password, loggedUser)) {
            return  loggedUser;
         }
 
         throw new RuntimeException("user not found");
     }
 
-    private boolean verifyUser(String username, String password, User user) {
-       return user.getUser().equals(username) && user.getPassword().equals(password);
+    private boolean verifyUser(String password, User user) {
+       return user.getPassword().equals(password);
     }
 
     public User register(String user, String password) {

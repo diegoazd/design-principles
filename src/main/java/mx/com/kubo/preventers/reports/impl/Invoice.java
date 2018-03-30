@@ -1,6 +1,6 @@
-package mx.com.kubo.preventers.impl;
+package mx.com.kubo.preventers.reports.impl;
 
-import mx.com.kubo.preventers.InvoicePrinter;
+import mx.com.kubo.preventers.reports.InvoicePrinter;
 
 import java.math.BigDecimal;
 import java.util.List;

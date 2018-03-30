@@ -1,6 +1,8 @@
-package mx.com.kubo.preventers.bonus;
+package mx.com.kubo.preventers.bonus.impl;
 
-import mx.com.kubo.preventers.impl.Invoice;
+import mx.com.kubo.preventers.bonus.Bonus;
+import mx.com.kubo.preventers.bonus.Employee;
+import mx.com.kubo.preventers.reports.impl.Invoice;
 
 import java.math.BigDecimal;
 
@@ -25,5 +27,10 @@ public class BonusPremiumCustomerService implements Bonus {
     @Override
     public String bonusType() {
         return "Premium customer service";
+    }
+
+    @Override
+    public String getHeader() {
+        return employee.getId()+" - "+employee.getName()+" - "+employee.getType();
     }
 }

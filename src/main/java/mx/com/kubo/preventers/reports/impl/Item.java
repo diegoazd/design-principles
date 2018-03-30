@@ -1,4 +1,4 @@
-package mx.com.kubo.preventers.impl;
+package mx.com.kubo.preventers.reports.impl;
 
 import java.math.BigDecimal;
 

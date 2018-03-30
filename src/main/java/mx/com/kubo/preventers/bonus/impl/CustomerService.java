@@ -1,4 +1,4 @@
-package mx.com.kubo.preventers;
+package mx.com.kubo.preventers.bonus.impl;
 
 import mx.com.kubo.preventers.bonus.Employee;
 

@@ -60,7 +60,13 @@ public class UserManagementTest {
         userManagement.login("foo", "securePassword");
     }
 
-    @Test
+    @Test(expected = RuntimeException.class)
+    public void shouldThrowExceptionWhenUserPasswordNotMath() {
+        userManagement.login("user", "notSecurePassword");
+    }
+
+
+        @Test
     public void shouldRegisterUser() {
         User user = userManagement.register("abcde", "securePassword");
         assertEquals("abcde", user.getUser());

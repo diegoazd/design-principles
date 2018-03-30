@@ -1,5 +1,7 @@
 package mx.com.kubo.preventers;
 
+import mx.com.kubo.preventers.reports.impl.Invoice;
+import mx.com.kubo.preventers.reports.impl.Item;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -47,5 +49,4 @@ public class InvoiceTest {
     public void shouldGetXmlStatement() {
         assertEquals(xmlStatement, invoice.xmlStatement());
     }
-
 }

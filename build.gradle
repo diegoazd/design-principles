@@ -45,6 +45,9 @@ artifacts {
     sourcesJar
 }
 
+test {
+    finalizedBy jacocoTestReport
+}
 gradle.taskGraph.whenReady {
     def createIfNotExists = { File dir ->
         if (!dir.exists()) {

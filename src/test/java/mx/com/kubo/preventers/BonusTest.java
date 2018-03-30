@@ -1,5 +1,12 @@
 package mx.com.kubo.preventers;
 
+import mx.com.kubo.preventers.bonus.*;
+import mx.com.kubo.preventers.bonus.impl.BonusCustomerService;
+import mx.com.kubo.preventers.bonus.impl.BonusPremiumCustomerService;
+import mx.com.kubo.preventers.bonus.impl.CustomerService;
+import mx.com.kubo.preventers.bonus.impl.PremiumCustomerService;
+import mx.com.kubo.preventers.reports.impl.Invoice;
+import mx.com.kubo.preventers.reports.impl.Item;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -7,12 +14,13 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ComissionCustomerServiceTest {
+import static org.junit.Assert.assertEquals;
+
+public class BonusTest {
 
     List<Item> items;
     String user;
     Invoice invoice;
-    CustomerService customerService;
 
     @Before
     public void setup() {
@@ -24,14 +32,24 @@ public class ComissionCustomerServiceTest {
         user = "user";
 
         invoice = new Invoice(items, user);
-        customerService = new CustomerService(1, "foo");
     }
 
     @Test
     public void calculateBonus() throws Exception {
-        CustomerService customerService = new CustomerService(1, "foo");
-        ComissionCustomerService comissionCustomerService = new ComissionCustomerService()
-        assertEquals(BigDecimal.valueOf(1.25d), );
+        Employee employee = new CustomerService(1, "foo");
+        Bonus bonus = new BonusCustomerService(employee, invoice);
+        assertEquals(new BigDecimal("1.250"), bonus.calculateBonus());
+        assertEquals("Customer service bonus", bonus.bonusType());
+        assertEquals("1 - foo - Customer Service", bonus.getHeader());
+    }
+
+    @Test
+    public void calculatePremiumCustomerServiceBonus() throws Exception {
+        Employee employee = new PremiumCustomerService(1, "foo");
+        Bonus bonus = new BonusPremiumCustomerService(employee, invoice);
+        assertEquals(new BigDecimal("1.750"), bonus.calculateBonus());
+        assertEquals("Premium customer service", bonus.bonusType());
+        assertEquals("1 - foo - Premium Customer Service", bonus.getHeader());
     }
 
 }
