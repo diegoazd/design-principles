@@ -1,9 +1,7 @@
-Gradle Project template
+Gradle Project code smells
 -----------------------
+Dentro de cada paquete se encuentran ejemplos con olores, hay que hacer los refactors a consideración para remover estos olores.
 
-You've just created a basic Gradle project
-
-The project's structure is laid out as follows
 
     <proj>
       |
@@ -12,16 +10,23 @@ The project's structure is laid out as follows
           +- main
               |
               +- java
+              | mx.com.kubo // application sources
+                    | abusers // abusers smells example
+                    | bloaters  // bloaters smells example
+                    | preventers // preventers smells example
+          |
+          +- test
               |
-                 // application sources
-              |
-              +- resources
-              |
+              +- java
+              | mx.com.kubo // application tests
+                    | abusers // abusers test code
+                    | bloaters  // bloaters test code
+                    | preventers // preventers test code
                  // application resources
+                
+Clonar proyecto:
+    git clone $projectUrl
+    
 
-Execute the following command to compile and package the project
-
-    ./gradlew build
-
-Don't forget to update the pom configuration section found at
-`gradle/publishing.gradle`.
+Run tests:
+    ./gradlew test
