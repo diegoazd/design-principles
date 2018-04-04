@@ -25,8 +25,10 @@ Dentro de cada paquete se encuentran ejemplos con olores, hay que hacer los refa
                  // application resources
                 
 Clonar proyecto:
+-----------------
     git clone $projectUrl
     
 
 Run tests:
+----------------
     ./gradlew test
