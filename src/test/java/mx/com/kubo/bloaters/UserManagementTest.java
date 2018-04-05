@@ -18,40 +18,40 @@ public class UserManagementTest {
     public void shouldLoginAsAdministrator() {
         User user = userManagement.login("admin", "securePassword");
         assertNotNull(user);
-        assertEquals("admin", user.getUser());
-        assertEquals(UserManagement.ADMIN_ROLE, user.getUserRole());
+        assertEquals("admin", user.getCredentials().getUser());
+        assertEquals(UserRoles.ADMIN_ROLE, user.getUserRole());
     }
 
     @Test
     public void shouldLoginAsManager() {
         User user = userManagement.login("manager", "securePassword");
         assertNotNull(user);
-        assertEquals("manager", user.getUser());
-        assertEquals(UserManagement.MANAGER_ROLE, user.getUserRole());
+        assertEquals("manager", user.getCredentials().getUser());
+        assertEquals(UserRoles.MANAGER_ROLE, user.getUserRole());
     }
 
     @Test
     public void shouldLoginAsCustomerService() {
         User user = userManagement.login("customer_service", "securePassword");
         assertNotNull(user);
-        assertEquals("customer_service", user.getUser());
-        assertEquals(UserManagement.CUSTOMER_SERVICE_ROLE, user.getUserRole());
+        assertEquals("customer_service", user.getCredentials().getUser());
+        assertEquals(UserRoles.CUSTOMER_SERVICE_ROLE, user.getUserRole());
     }
 
     @Test
     public void shouldLoginAsAccountant() {
         User user = userManagement.login("accountant", "securePassword");
         assertNotNull(user);
-        assertEquals("accountant", user.getUser());
-        assertEquals(UserManagement.ACCOUNTANT_ROLE, user.getUserRole());
+        assertEquals("accountant", user.getCredentials().getUser());
+        assertEquals(UserRoles.ACCOUNTANT_ROLE, user.getUserRole());
     }
 
     @Test
     public void shouldLoginAsUser() {
         User user = userManagement.login("user", "securePassword");
         assertNotNull(user);
-        assertEquals("user", user.getUser());
-        assertEquals(UserManagement.USER_ROLE, user.getUserRole());
+        assertEquals("user", user.getCredentials().getUser());
+        assertEquals(UserRoles.USER_ROLE, user.getUserRole());
     }
 
     @Test(expected = RuntimeException.class)
@@ -68,9 +68,9 @@ public class UserManagementTest {
         @Test
     public void shouldRegisterUser() {
         User user = userManagement.register("abcde", "securePassword");
-        assertEquals("abcde", user.getUser());
-        assertEquals("securePassword", user.getPassword());
-        assertEquals(UserManagement.USER_ROLE, user.getUserRole());
+        assertEquals("abcde", user.getCredentials().getUser());
+        assertEquals("securePassword", user.getCredentials().getPassword());
+        assertEquals(UserRoles.USER_ROLE, user.getUserRole());
     }
 
     @Test(expected = RuntimeException.class)

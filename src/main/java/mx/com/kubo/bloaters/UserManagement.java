@@ -5,21 +5,15 @@ import java.util.Map;
 
 public class UserManagement {
 
-    public static final int ADMIN_ROLE = 1;
-    public static final int MANAGER_ROLE = 2;
-    public static final int CUSTOMER_SERVICE_ROLE = 3;
-    public static final int ACCOUNTANT_ROLE = 4;
-    public static final int USER_ROLE = 5;
-
     private Map<String, User> users;
 
     public UserManagement() {
         users = new HashMap<>();
-        users.put("admin", new User("admin", "securePassword", ADMIN_ROLE));
-        users.put("manager", new User("manager", "securePassword", MANAGER_ROLE));
-        users.put("accountant", new User("accountant", "securePassword", ACCOUNTANT_ROLE));
-        users.put("user", new User("user", "securePassword", USER_ROLE));
-        users.put("customer_service", new User("customer_service", "securePassword", CUSTOMER_SERVICE_ROLE));
+        users.put("admin", new User(new UserCredentials("admin", "securePassword"), UserRoles.ADMIN_ROLE));
+        users.put("manager", new User(new UserCredentials("manager", "securePassword"), UserRoles.MANAGER_ROLE));
+        users.put("accountant", new User(new UserCredentials("accountant", "securePassword"), UserRoles.ACCOUNTANT_ROLE));
+        users.put("user", new User(new UserCredentials("user", "securePassword"), UserRoles.USER_ROLE));
+        users.put("customer_service", new User(new UserCredentials("customer_service", "securePassword"), UserRoles.CUSTOMER_SERVICE_ROLE));
     }
 
 
@@ -34,12 +28,12 @@ public class UserManagement {
     }
 
     private boolean verifyUser(String password, User user) {
-       return user.getPassword().equals(password);
+       return user.getCredentials().getPassword().equals(password);
     }
 
     public User register(String user, String password) {
         if(users.get(user) == null) {
-           return new User(user, password, USER_ROLE);
+           return new User(new UserCredentials(user, password), UserRoles.USER_ROLE);
         }else {
             throw new RuntimeException("Users cant be registere");
         }
