@@ -3,8 +3,7 @@ package mx.com.kubo.bloaters;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 public class UserManagementTest {
 
@@ -77,6 +76,12 @@ public class UserManagementTest {
     @Test(expected = RuntimeException.class)
     public void shouldThrowExceptionWhenRegisterUser() {
         userManagement.register("admin", "securePassword");
+    }
+
+    @Test
+    public void shouldCreateAddress() {
+        assertTrue(userManagement.validateAddress("street", "number int", "number int", "" +
+                "postal code", "colony", "city", "state", "country"));
     }
 
 }
