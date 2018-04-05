@@ -17,28 +17,27 @@ public class UserManagement {
     }
 
 
-    public User login(String user, String password) {
-        User loggedUser = users.get(user);
+    public User login(UserCredentials userCredentials) {
+        User loggedUser = users.get(userCredentials.getUser());
 
-        if(loggedUser != null && verifyUser(password, loggedUser)) {
+        if(loggedUser != null && verifyUser(userCredentials, loggedUser)) {
            return  loggedUser;
         }
 
         throw new RuntimeException("user not found");
     }
 
-    private boolean verifyUser(String password, User user) {
-       return user.getCredentials().getPassword().equals(password);
+    private boolean verifyUser(UserCredentials userCredentials, User user) {
+       return user.getCredentials().getPassword().equals(userCredentials.getPassword());
     }
 
-    public User register(String user, String password) {
-        if(users.get(user) == null) {
-           return new User(new UserCredentials(user, password), UserRoles.USER_ROLE);
+    public User register(UserCredentials userCredentials) {
+        if(users.get(userCredentials.getUser()) == null) {
+           return new User(userCredentials, UserRoles.USER_ROLE);
         }else {
             throw new RuntimeException("Users cant be registere");
         }
     }
-
 
     public boolean validateAddress(String street, String numberInt, String numberExt, String postalCode,
                                    String colony, String city, String state, String country) {
