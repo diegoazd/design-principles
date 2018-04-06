@@ -9,26 +9,27 @@ public class UserManagement {
 
     public UserManagement() {
         users = new HashMap<>();
-        users.put("admin", new User(new UserCredentials("admin", "securePassword"), UserRoles.ADMIN_ROLE));
-        users.put("manager", new User(new UserCredentials("manager", "securePassword"), UserRoles.MANAGER_ROLE));
-        users.put("accountant", new User(new UserCredentials("accountant", "securePassword"), UserRoles.ACCOUNTANT_ROLE));
-        users.put("user", new User(new UserCredentials("user", "securePassword"), UserRoles.USER_ROLE));
-        users.put("customer_service", new User(new UserCredentials("customer_service", "securePassword"), UserRoles.CUSTOMER_SERVICE_ROLE));
+        buildUsers();
     }
-
 
     public User login(UserCredentials userCredentials) {
-        User loggedUser = users.get(userCredentials.getUser());
-
-        if(loggedUser != null && verifyUser(userCredentials, loggedUser)) {
-           return  loggedUser;
-        }
-
-        throw new RuntimeException("user not found");
+        return fetchUser(userCredentials, users.get(userCredentials.getUser()));
     }
 
-    private boolean verifyUser(UserCredentials userCredentials, User user) {
-       return user.getCredentials().getPassword().equals(userCredentials.getPassword());
+    private User fetchUser(UserCredentials userCredentials, User loggedUser) {
+        if(isValid(userCredentials, loggedUser)) {
+            throw new RuntimeException("user not found");
+        }
+
+        return loggedUser;
+    }
+
+    private boolean isValid(UserCredentials userCredentials, User loggedUser) {
+        return loggedUser == null || !match(userCredentials, loggedUser);
+    }
+
+    private boolean match(UserCredentials userCredentials, User user) {
+       return user.getCredentials().equals(userCredentials);
     }
 
     public User register(UserCredentials userCredentials) {
@@ -42,5 +43,17 @@ public class UserManagement {
     public boolean validateAddress(String street, String numberInt, String numberExt, String postalCode,
                                    String colony, String city, String state, String country) {
         return new Address(street, numberInt, numberExt, postalCode, colony, city, state, country).isValid();
+    }
+
+    private void buildUsers() {
+        addUser("admin", "securePassword", UserRoles.ADMIN_ROLE);
+        addUser("manager", "securePassword", UserRoles.MANAGER_ROLE);
+        addUser("accountant", "securePassword", UserRoles.ACCOUNTANT_ROLE);
+        addUser("user", "securePassword", UserRoles.USER_ROLE);
+        addUser("customer_service", "securePassword", UserRoles.CUSTOMER_SERVICE_ROLE);
+    }
+
+    private void addUser(String user, String password, UserRoles userRoles) {
+        users.put(user, new User(new UserCredentials(user, password), userRoles));
     }
 }
