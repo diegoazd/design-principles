@@ -41,13 +41,6 @@ public class UserManagement {
 
     public boolean validateAddress(String street, String numberInt, String numberExt, String postalCode,
                                    String colony, String city, String state, String country) {
-        return (street != null || !street.isEmpty()) ||
-                (numberInt != null || !numberInt.isEmpty()) ||
-                (numberExt != null || !numberExt.isEmpty()) ||
-                (postalCode != null || !postalCode.isEmpty()) ||
-                (colony != null || !colony.isEmpty()) ||
-                (city != null || !city.isEmpty()) ||
-                (state != null || !state.isEmpty()) ||
-                (country != null || !country.isEmpty());
+        return new Address(street, numberInt, numberExt, postalCode, colony, city, state, country).isValid();
     }
 }
