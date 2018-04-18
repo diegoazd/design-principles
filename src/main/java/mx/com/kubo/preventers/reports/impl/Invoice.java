@@ -1,6 +1,10 @@
 package mx.com.kubo.preventers.reports.impl;
 
 import mx.com.kubo.preventers.reports.InvoicePrinter;
+import mx.com.kubo.preventers.reports.print.AsciiPrinter;
+import mx.com.kubo.preventers.reports.print.BillPrinter;
+import mx.com.kubo.preventers.reports.print.HtmlPrinter;
+import mx.com.kubo.preventers.reports.print.XmlPrinter;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -18,67 +22,33 @@ public class Invoice implements InvoicePrinter {
 
     @Override
     public String asciiStatement() {
-        total = BigDecimal.ZERO;
-        StringBuffer sb = new StringBuffer("Bill for ").append(customer).append("\n");
-        lineItem.stream().forEach(item -> {sb.append("\t")
-                                            .append(item.getName())
-                                            .append("\t\t")
-                                            .append(item.getPrice())
-                                            .append("\n");
-           total = total.add(item.getPrice());
-        });
-
-        sb.append("total owed: ").append(total);
-        return sb.toString();
+        return statement(new AsciiPrinter());
     }
 
     @Override
     public String htmlStatement() {
-        total = BigDecimal.ZERO;
-        StringBuffer sb = new StringBuffer("<p>Bill for <i>").append(customer)
-                .append("</i></p><table>");
-        lineItem.stream().forEach(item -> {
-            sb.append("<tr><td>")
-                    .append(item.getName())
-                    .append("</td>")
-            .append("<td>")
-            .append(item.getPrice())
-            .append("</td></tr>");
-            total = total.add(item.getPrice());
-        });
-        sb.append("</table>")
-                .append("<p>total owed: <b>")
-                .append(total)
-                .append("</b></p>");
-
-        return sb.toString();
+        return statement(new HtmlPrinter());
     }
 
     @Override
     public String xmlStatement() {
+        return statement(new XmlPrinter());
+    }
+
+    private String statement(BillPrinter billPrinter) {
         total = BigDecimal.ZERO;
-        StringBuffer sb = new StringBuffer();
-        sb.append("<bill><to>Bill for ").append(customer).append("</to><items>");
+        StringBuffer sb = new StringBuffer(billPrinter.header(customer));
+
         lineItem.stream().forEach(item -> {
-            sb.append("<item><name>")
-                    .append(item.getName())
-                    .append("</name>")
-                    .append("<price>")
-                    .append(item.getPrice())
-                    .append("</price>")
-                    .append("</item>");
+            sb.append(billPrinter.item(item));
             total = total.add(item.getPrice());
         });
-        sb.append("</items><total>total owed: ")
-                .append(total)
-                .append("</total></bill>");
 
+        sb.append(billPrinter.total(total));
         return sb.toString();
     }
 
     public List<Item> getLineItem() {
         return lineItem;
     }
-
-
 }
