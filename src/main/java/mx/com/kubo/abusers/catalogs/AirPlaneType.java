@@ -1,4 +1,4 @@
-package mx.com.kubo.abusers;
+package mx.com.kubo.abusers.catalogs;
 
 public enum AirPlaneType {
     CONCORDE("Concorde"), CARRIER("Carrier"), DRONE("Drone");

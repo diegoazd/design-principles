@@ -1,8 +1,9 @@
 package mx.com.kubo.abusers;
 
+import mx.com.kubo.abusers.catalogs.AirPlaneType;
+import mx.com.kubo.abusers.catalogs.DroneType;
 import mx.com.kubo.abusers.impl.AirPlane;
 import mx.com.kubo.abusers.impl.Drone;
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

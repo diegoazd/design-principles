@@ -1,6 +1,6 @@
 package mx.com.kubo.abusers.impl;
 
-import mx.com.kubo.abusers.AirPlaneType;
+import mx.com.kubo.abusers.catalogs.AirPlaneType;
 import mx.com.kubo.abusers.AirVehicle;
 
 public class AirPlane implements AirVehicle {
